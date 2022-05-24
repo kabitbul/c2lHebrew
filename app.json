@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Click2Lock",
+    "slug": "Click2Lock",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/c2l.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/c2lSplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/c2l.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.kabitbul.c2lHebrew"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
