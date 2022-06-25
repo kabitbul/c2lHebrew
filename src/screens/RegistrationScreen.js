@@ -13,6 +13,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { Text, Input } from "react-native-elements";
 import AppLoader from "./AppLoader";
 import UserExistsAPI from "../api/UserExistsAPI";
+import SendOTPAPI from "../api/SendOTPAPI";
 
 const RegistrationScreen = ({ navigation }) => {
   //const {state , register} = useContext(AuthContext);
@@ -43,26 +44,28 @@ const RegistrationScreen = ({ navigation }) => {
     } else {
       //console.log('regScreen before sending SMS');
       //********TEMP*****
-      //const respOTP = await SendOTPAPI.get('/sendOtp.php?get=1&token=1DZI5018d20ccfa1d705c08a40092b11b0d1&phone='+phone+'&type=sms&From=Click2Lock');
+      const respOTP = await SendOTPAPI.get(
+        "/sendOtp.php?get=1&token=1DZI5018d20ccfa1d705c08a40092b11b0d1&phone=" +
+          phone +
+          "&type=sms&From=Click2Lock"
+      );
       setLoginPending(false);
       //console.log('regScreen status from API IS '+ respOTP.data);
-      if (1 === 1) {
-        //********TEMP*****
-        //if(respOTP.data == 'CODE_SENT')
+      //if (1 === 1) {
+      //********TEMP*****
+      if (respOTP.data == "CODE_SENT") {
         //console.log('regScreen CODE_SENT nav to OTP: ' );
         navigation.navigate("Otp", {
           phoneNumber: phone,
           screen: "registration",
           name: name,
         });
-      }
-      //else if(respOTP.data == 'ERROR')
-      else if (1 == 2) {
+      } else if (respOTP.data == "ERROR") {
+        //else if (1 == 2) {
         Alert.alert("אזהרה", "אירעה שגיאה בזמן שליחת ההודעה");
         return;
-      }
-      //else if(respOTP.data == 'MAX_SENT ')
-      else if (1 == 2) {
+      } else if (respOTP.data == "MAX_SENT ") {
+        //else if (1 == 2) {
         Alert.alert(
           "אזהרה",
           "מספר הודעות מקסימאלי נשלח בדקות האחרונות, נא לנסות שוב מאוחר יותר"

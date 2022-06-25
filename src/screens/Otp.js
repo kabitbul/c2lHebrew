@@ -63,17 +63,17 @@ const Otp = ({ navigation }) => {
         pin5
     );
     //replace on prod
-    if (pin1 != 1 || pin2 != 2 || pin3 != 3 || pin4 != 4 || pin5 != 5) {
-      /////////TEMP
-      //if(verOTP.data == 'WRONG_CODE')
+    //if (pin1 != 1 || pin2 != 2 || pin3 != 3 || pin4 != 4 || pin5 != 5) {
+    /////////TEMP
+    if (verOTP.data == "WRONG_CODE") {
       setLoginPending(false);
       Alert.alert("אזהרה", "הקוד שהוזן אינו תואם");
       return 0;
     }
     //replace on prod
-    else if (pin1 == 1 && pin2 == 2 && pin3 == 3 && pin4 == 4 && pin5 == 5) {
-      //////////TEMP
-      //else if(verOTP.data == 'CODE_VALID')
+    //else if (pin1 == 1 && pin2 == 2 && pin3 == 3 && pin4 == 4 && pin5 == 5) {
+    //////////TEMP
+    else if (verOTP.data == "CODE_VALID") {
       const Email = phoneNumber + "@gmail.com";
       const Password =
         "Click2Lock!" + phoneNumber.substring(phoneNumber.length - 4);
