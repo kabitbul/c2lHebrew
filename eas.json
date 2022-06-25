@@ -13,11 +13,17 @@
       }
     },
     "preview2": {
-      "distribution": "internal"
+      "distribution": "store"
     },
     "production": {}
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios":{
+        "appleId":"kabitbul@gmail.com",
+        "ascAppId":"1629487709",
+        "appleTeamId": "BH5QHM8ZWK"
+      }
+    }
   }
 }

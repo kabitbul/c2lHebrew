@@ -41,24 +41,27 @@ const CameraScreen = ({ navigation }) => {
     setLoginPending(true);
     //console.log(`Bar code with type ${type} and data ${data} has been scanned!`);
     //get the mac from string
+    //console.log("***********************************");
+    //console.log(data);
+    //console.log("***********************************");
     var startMac = data.indexOf("mac=") + 4;
     var startAmpersand = data.indexOf("&");
     const mac = data.substring(startMac, startAmpersand);
-    console.log(mac);
+    //console.log(mac);
     const Email = await AsyncStorage.getItem("email");
-    console.log(Email);
+    //console.log(Email);
     //const response = null;
     try {
-      console.log("/Broker/UnlockCart?mac=" + mac + "&userId=" + Email);
-      console.log("***B4***");
+      //console.log("/Broker/UnlockCart?mac=" + mac + "&userId=" + Email);
+      //console.log("***B4***");
       const response = await takecartAPI.get(
         "/Broker/UnlockCart?mac=" + mac + "&userId=" + Email
       );
-      console.log("***AFTER***");
-      console.log("***" + response);
-      console.log(response.data);
+      //console.log("***AFTER***");
+      //console.log("***" + response);
+      //console.log(response.data);
       const resp = JSON.stringify(response.data);
-      console.log(resp);
+      //console.log(resp);
       if (response.data == "UnRecogLock") {
         setLoginPending(false);
         Alert.alert("אזהרה", "זיהוי לא תקין של העגלה");

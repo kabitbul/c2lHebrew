@@ -18,17 +18,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kabitbul.c2lHebrew",
+      "buildNumber": "1.0.1",
+      "NSCameraUsageDescription":"This app uses the camera to scan barcodes on a supermarket Carts Locks and unlock the cart to start shopping."
     },
     "android": {
+      "package": "com.kabitbul.c2lHebrew",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/c2l.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.kabitbul.c2lHebrew"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "infoPlist": {
+      "NSCameraUsageDescription": "This app uses the camera to scan barcodes on a supermarket Carts Locks."
     }
   }
 }
